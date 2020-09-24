@@ -1,13 +1,13 @@
 class Customer
-  attr_accessor :name, :age, :meal, :waiter
+  attr_accessor :name, :age
   
   
   
   def initialize(name, age)
     @name = name
     @age = age
-    @waiter = waiter
-    @meal = []
+    #@waiter = waiter
+    #@meal = []
     @@all << self
   end
   
