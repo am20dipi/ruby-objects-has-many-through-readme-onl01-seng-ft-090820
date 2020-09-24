@@ -1,11 +1,13 @@
 class Waiter
-  attr_accessor :name, :years, :tip, :meal
+  attr_accessor :name, :years
+  
+  @@all =[]
   
   def initialize(name, years)
     @name = name
     @years = years
-    @meal = meal
-    @tip = 0
+    #@meal = meal
+    #@tip = 0
     @@all << self
   end
   
@@ -24,7 +26,7 @@ class Waiter
   end
   
   def best_tipper
-    best_tipped_meal = Meal.max {|meal_1, meal_2| meal_1.tip <=> meal_2.tip}
+    best_tipped_meal = meal.max {|meal_1, meal_2| meal_1.tip <=> meal_2.tip}
     best_tipped_meal.customer
   end
     
